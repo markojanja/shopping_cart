@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+}
+#root {
+  min-height: 100vh;
+}
+
+.light {
+  --background: 248 250 252;
+  --txt: 10 10 10;
+
+  transition: all 0.3s ease;
+}
+.dark {
+  --background: 10 10 20;
+  --txt: 248 250 252;
+}
+
+.circle-1 {
+  position: absolute;
+  height: 25%;
+  width: 25%;
+  background: linear-gradient(90deg, rgb(247, 44, 247), rgb(44, 44, 148));
+  top: 20%;
+  left: 15%;
+  border-radius: 50%;
+  filter: blur(5rem);
+}
+
+#cliped {
+  background-image: linear-gradient(to right rgb(250, 120, 207), blue);
+  color: rgb(10, 10, 10);
+}
