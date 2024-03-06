@@ -1,6 +1,7 @@
 import { useState } from "react";
 import MobileNavbar from "./MobileNavbar";
 import { IoBagHandleOutline, IoSunnySharp, IoMoonSharp, IoMenuSharp } from "react-icons/io5";
+import { GiTomato } from "react-icons/gi";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(true);
@@ -13,8 +14,11 @@ const Navbar = () => {
   return (
     <>
       {mobileNav && <MobileNavbar onClick={togggleMobileView} />}
-      <nav className='fixed flex items-center justify-between w-full py-4  px-8 shadow-sm z-40'>
-        <div id='nav-logo' className='cursor-pointer'>
+      <nav className='fixed flex items-center justify-between w-full py-4  px-8 shadow-sm z-50 bg-slate-50'>
+        <div id='nav-logo' className='cursor-pointer flex gap-1 items-center justify-center'>
+          <span className='text-red-600 text-xl'>
+            <GiTomato />
+          </span>
           <h3 className='text-xl font-bold'>SuppaShop</h3>
         </div>
         <div id='links' className='flex flex-row-reverse gap-4 sm:flex-row '>
