@@ -9,13 +9,15 @@ const Footer = () => {
         <li>Home</li>
         <li>Shop</li>
         <li>About</li>
+        <li>Contact</li>
       </ul>
 
       <ul className='flex flex-col items-center justify-start h-full'>
         <h3 className='text-gray-400 font-bold uppercase'>Links</h3>
-        <li>Home</li>
-        <li>Shop</li>
-        <li>About</li>
+        <li>Cart</li>
+        <li>Account</li>
+        <li>FAQ's</li>
+        <li>Blog</li>
       </ul>
       <div className='flex flex-col items-center justify-start h-full gap-1 px-1'>
         <h3 className='text-gray-400 font-bold uppercase'>newsletter</h3>

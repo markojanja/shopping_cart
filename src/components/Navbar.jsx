@@ -26,6 +26,7 @@ const Navbar = () => {
             <li className='cursor-pointer'>Home</li>
             <li className='cursor-pointer'>Shop</li>
             <li className='cursor-pointer'>About</li>
+            <li className='cursor-pointer'>Contact</li>
           </ul>
           <ul className='flex gap-4 items-center text-2xl'>
             <li className='relative cursor-pointer'>
