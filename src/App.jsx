@@ -16,15 +16,15 @@ function App() {
           element: <Main />,
         },
         {
-          path: "about",
+          path: "/about",
           element: <About />,
         },
         {
-          path: "shop",
+          path: "/shop",
           element: <Shop />,
         },
         {
-          path: "contact",
+          path: "/contact",
           element: <Contact />,
         },
       ],

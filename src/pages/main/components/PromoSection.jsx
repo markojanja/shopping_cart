@@ -1,4 +1,5 @@
 import promo from "../../../assets/promo.jpg";
+import { Link } from "react-router-dom";
 
 const PromoSection = () => {
   return (
@@ -15,7 +16,9 @@ const PromoSection = () => {
           shop with confidence. Don't miss out on these incredible savings , shop now and elevate your shopping
           experience with us!
         </p>
-        <button className='bg-white max-w-[200px] text-black px-6 py-3 '>Shop Now</button>
+        <Link className='bg-white max-w-[200px] text-black px-6 py-3' to='/shop'>
+          ShopNow
+        </Link>
       </div>
     </section>
   );

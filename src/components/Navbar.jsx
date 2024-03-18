@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import MobileNavbar from "./MobileNavbar";
 import { IoBagHandleOutline, IoSunnySharp, IoMoonSharp, IoMenuSharp } from "react-icons/io5";
 import { GiTomato } from "react-icons/gi";
@@ -16,12 +16,14 @@ const Navbar = () => {
     <>
       {mobileNav && <MobileNavbar onClick={togggleMobileView} />}
       <nav className='fixed flex items-center justify-between w-full py-4  px-8 shadow-sm z-50 bg-slate-50'>
-        <div id='nav-logo' className='cursor-pointer flex gap-1 items-center justify-center'>
-          <span className='text-red-600 text-xl'>
-            <GiTomato />
-          </span>
-          <h3 className='text-xl font-bold'>SuppaShop</h3>
-        </div>
+        <Link to='/'>
+          <div id='nav-logo' className='cursor-pointer flex gap-1 items-center justify-center'>
+            <span className='text-red-600 text-xl'>
+              <GiTomato />
+            </span>
+            <h3 className='text-xl font-bold'>SuppaShop</h3>
+          </div>
+        </Link>
         <div id='links' className='flex flex-row-reverse gap-4 sm:flex-row '>
           <ul className='hidden sm:flex gap-4 text-md'>
             <li className='cursor-pointer'>

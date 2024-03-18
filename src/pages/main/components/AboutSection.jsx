@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import aboutPic from "../../../assets/about.jpg";
 
 const AboutSection = () => {
@@ -13,7 +14,9 @@ const AboutSection = () => {
           gadgets, fashion-forward accessories, or unique home decor, we're here to help you discover the perfect
           solution. Thank you for choosing us as your trusted online shopping destination.
         </p>
-        <button className='bg-red-500 px-4 py-2 text-white font-bold w-[150px]'>Learn more</button>
+        <Link className='bg-red-500 px-4 py-2 text-white font-bold w-[150px]' to='/about'>
+          Learn more
+        </Link>
       </div>
       <img className='flex-1 w-full object-cover overflow-hidden' src={aboutPic} alt='woman shopping' />
     </section>
