@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import MobileNavbar from "./MobileNavbar";
 import { IoBagHandleOutline, IoSunnySharp, IoMoonSharp, IoMenuSharp } from "react-icons/io5";
 import { GiTomato } from "react-icons/gi";
@@ -23,10 +24,18 @@ const Navbar = () => {
         </div>
         <div id='links' className='flex flex-row-reverse gap-4 sm:flex-row '>
           <ul className='hidden sm:flex gap-4 text-md'>
-            <li className='cursor-pointer'>Home</li>
-            <li className='cursor-pointer'>Shop</li>
-            <li className='cursor-pointer'>About</li>
-            <li className='cursor-pointer'>Contact</li>
+            <li className='cursor-pointer'>
+              <NavLink to='/'>Home</NavLink>
+            </li>
+            <li className='cursor-pointer'>
+              <NavLink to='/shop'>Shop</NavLink>
+            </li>
+            <li className='cursor-pointer'>
+              <NavLink to='/about'>About</NavLink>
+            </li>
+            <li className='cursor-pointer'>
+              <NavLink to='/contact'>Contact</NavLink>
+            </li>
           </ul>
           <ul className='flex gap-4 items-center text-2xl'>
             <li className='relative cursor-pointer'>
