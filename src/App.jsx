@@ -4,6 +4,9 @@ import Main from "./pages/main/Main";
 import About from "./pages/about/About";
 import Shop from "./pages/shop/Shop";
 import Contact from "./pages/contact/Contact";
+import { loader as catLoader } from "./pages/shop/Shop.jsx";
+import { loader as productLoader } from "./pages/shop/components/Products.jsx";
+import Products from "./pages/shop/components/Products.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -22,6 +25,14 @@ function App() {
         {
           path: "/shop",
           element: <Shop />,
+          loader: catLoader,
+          children: [
+            {
+              index: true,
+              element: <Products />,
+              loader: productLoader,
+            },
+          ],
         },
         {
           path: "/contact",
