@@ -3,7 +3,7 @@ import aboutPic from "../../../assets/about.jpg";
 
 const AboutSection = () => {
   return (
-    <section className='w-4/5 mx-auto grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-3 p-3'>
+    <section className='w-4/5 mx-auto grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-3 my-11'>
       <div className='flex flex-col gap-7 justify-center items-start self-start flex-2'>
         <h2 className='text-3xl font-bold'>AboutUs</h2>
         <p className='text-md lg:leading-loose'>
