@@ -6,7 +6,9 @@ import Shop from "./pages/shop/Shop";
 import Contact from "./pages/contact/Contact";
 import { loader as catLoader } from "./pages/shop/Shop.jsx";
 import { loader as productLoader } from "./pages/shop/components/Products.jsx";
+import { loader as productsByCat } from "./pages/shop/components/ProductsByCat.jsx";
 import Products from "./pages/shop/components/Products.jsx";
+import ProductsByCat from "./pages/shop/components/ProductsByCat.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -31,6 +33,11 @@ function App() {
               index: true,
               element: <Products />,
               loader: productLoader,
+            },
+            {
+              path: ":name",
+              element: <ProductsByCat />,
+              loader: productsByCat,
             },
           ],
         },
