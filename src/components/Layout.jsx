@@ -5,12 +5,12 @@ import ScrollToTop from "../components/ScrollToTop";
 
 const Layout = () => {
   return (
-    <>
+    <div className='bg-slate-50'>
       <ScrollToTop />
       <Navbar />
       <Outlet />
       <Footer />
-    </>
+    </div>
   );
 };
 

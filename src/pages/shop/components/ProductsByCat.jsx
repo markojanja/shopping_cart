@@ -3,15 +3,15 @@ import { IoCartSharp } from "react-icons/io5";
 
 const ProductsByCat = () => {
   const data = useLoaderData();
-  console.log(data);
+
   return (
     <>
       {data.map((product) => (
         <div
           key={product.id}
-          className='flex max-h-96 justify-between flex-col border border-gray-300 gap-3 p-3 rounded-md shadow-md'
+          className='flex max-h-96 justify-between flex-col border border-gray-100 gap-3 p-3 rounded-md shadow-md'
         >
-          <div className='h-64 items-center justify-center relative text-white font-bold'>
+          <div className='h-64 items-center justify-center relative text-white font-bold p-3'>
             <img className='h-full w-full object-contain flex-1' src={product.image} alt='' />
             <div className='absolute bottom-1 right-1 flex items-center justify-center py-1 px-3 max-w-[85px]  bg-red-500 rounded-3xl'>
               ${product.price}
