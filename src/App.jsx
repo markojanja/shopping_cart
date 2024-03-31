@@ -4,17 +4,17 @@ import Main from "./pages/main/Main";
 import About from "./pages/about/About";
 import Shop from "./pages/shop/Shop";
 import Contact from "./pages/contact/Contact";
+import Products from "./pages/shop/components/Products.jsx";
+import ErrorPage from "./components/ErrorPage.jsx";
 import { loader as catLoader } from "./pages/shop/Shop.jsx";
 import { loader as productLoader } from "./pages/shop/components/Products.jsx";
-import { loader as productsByCat } from "./pages/shop/components/ProductsByCat.jsx";
-import Products from "./pages/shop/components/Products.jsx";
-import ProductsByCat from "./pages/shop/components/ProductsByCat.jsx";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Layout />,
+      errorElement: <ErrorPage />,
       children: [
         {
           index: true,
@@ -27,6 +27,7 @@ function App() {
         {
           path: "/shop",
           element: <Shop />,
+          errorElement: <ErrorPage />,
           loader: catLoader,
           children: [
             {
@@ -36,8 +37,8 @@ function App() {
             },
             {
               path: ":name",
-              element: <ProductsByCat />,
-              loader: productsByCat,
+              element: <Products />,
+              loader: productLoader,
             },
           ],
         },

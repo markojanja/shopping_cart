@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { IoCartSharp } from "react-icons/io5";
+
 const Products = () => {
   const data = useLoaderData();
   return (
@@ -7,7 +8,7 @@ const Products = () => {
       {data.map((product) => (
         <div
           key={product.id}
-          className='flex justify-between flex-col border border-gray-100 gap-3  rounded-md shadow-md'
+          className='flex max-h-96 justify-between flex-col border border-gray-100 gap-3 p-3 rounded-md shadow-md'
         >
           <div className='h-64 items-center justify-center relative text-white font-bold p-3'>
             <img className='h-full w-full object-contain flex-1' src={product.image} alt='' />
@@ -29,9 +30,21 @@ const Products = () => {
 
 export default Products;
 
-export const loader = async () => {
-  const response = await fetch("https://fakestoreapi.com/products");
-  const data = await response.json();
+export const loader = async ({ params }) => {
+  console.log(params);
+  if (Object.keys(params).length === 0) {
+    const response = await fetch("https://fakestoreapi.com/products");
+    const data = await response.json();
+    return data;
+  } else {
+    const res = await fetch(`https://fakestoreapi.com/products/category/${params.name}`);
 
-  return data;
+    const data = await res.json();
+
+    if (!data.length) {
+      throw new Error("Not Found");
+    }
+
+    return data;
+  }
 };
