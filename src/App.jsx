@@ -5,9 +5,10 @@ import About from "./pages/about/About";
 import Shop from "./pages/shop/Shop";
 import Contact from "./pages/contact/Contact";
 import Products from "./pages/shop/components/Products.jsx";
+import Product, { loader as productLoader } from "./pages/shop/components/Product.jsx";
 import ErrorPage from "./components/ErrorPage.jsx";
 import { loader as catLoader } from "./pages/shop/Shop.jsx";
-import { loader as productLoader } from "./pages/shop/components/Products.jsx";
+import { loader as productsLoader } from "./pages/shop/components/Products.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -33,14 +34,19 @@ function App() {
             {
               index: true,
               element: <Products />,
-              loader: productLoader,
+              loader: productsLoader,
             },
             {
               path: ":name",
               element: <Products />,
-              loader: productLoader,
+              loader: productsLoader,
             },
           ],
+        },
+        {
+          path: "/shop/products/:id",
+          element: <Product />,
+          loader: productLoader,
         },
         {
           path: "/contact",
