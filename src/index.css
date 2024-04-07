@@ -43,3 +43,11 @@ body {
     transform: rotate(720deg);
   }
 }
+
+.active {
+  color: #ef4444;
+}
+
+.capitalize-first::first-letter {
+  text-transform: uppercase !important;
+}

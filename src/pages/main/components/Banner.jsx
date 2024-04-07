@@ -1,5 +1,8 @@
 import banner from "../../../assets/banner44.png";
+import placeholder from "../../../assets/place.png";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Banner = () => {
   return (
@@ -10,12 +13,12 @@ const Banner = () => {
           Routine
         </h1>
         <p className='text-xl font-semibold text-gray-900'>Unravel Endless Choices on Our E-Commerce Platform!</p>
-        <Link className='bg-red-500 text-white px-4 py-2 text-center font-bold' to='/shop'>
+        <Link className='bg-red-500 text-white px-4 py-2 text-center font-bold ' to='/shop'>
           Shop Now
         </Link>
       </div>
       <div className='flex justify-center items-end overflow-hidden'>
-        <img className='h-full w-full object-cover' src={banner} alt='' loading='lazy' />
+        <LazyLoadImage className='h-full w-full object-cover' src={banner} effect='blur' placeholderSrc={placeholder} />
       </div>
     </main>
   );
