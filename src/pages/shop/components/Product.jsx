@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 
 const Product = () => {
   const product = useLoaderData();
-  console.log(product);
+
   return (
     <main className='flex items-center min-h-screen pt-24'>
       <div className='w-4/5 mx-auto grid md:grid-cols-2 items-center justify-center'>
@@ -30,11 +30,13 @@ const Product = () => {
 export default Product;
 
 export const loader = async ({ params }) => {
-  const response = await fetch(`https://fakestoreapi.com/products/${params.id}`);
+  try {
+    const response = await fetch(`https://fakestoreapi.com/products/${params.id}`);
 
-  const product = await response.json();
+    const product = await response.json();
 
-  console.log(response);
-
-  return product;
+    return product;
+  } catch (err) {
+    throw new Error("Not found");
+  }
 };

@@ -18,7 +18,7 @@ const AboutSection = () => {
           Learn more
         </Link>
       </div>
-      <img className='flex-1 w-full object-cover overflow-hidden' src={aboutPic} alt='woman shopping' />
+      <img className='flex-1 w-full object-cover overflow-hidden' src={aboutPic} alt='woman shopping' loading='lazy' />
     </section>
   );
 };

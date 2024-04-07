@@ -22,7 +22,7 @@ const Contact = () => {
           </div>
         </div>
         <div className='relative w-full lg:w-1/2 bg-red-200'>
-          <img className='h-full w-full' src={email} alt='' />
+          <img className='h-full w-full' src={email} alt='' loading='lazy' />
         </div>
       </div>
     </main>

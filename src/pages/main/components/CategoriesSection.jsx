@@ -36,7 +36,7 @@ const CategoriesSection = () => {
       <div className='grid grid-cols-2 lg:grid-cols-4 md:grid-cols-2 gap-4 w-4/5 mx-auto'>
         {categories.map((cat, idx) => (
           <div key={idx} className='relative bg-red-500'>
-            <img className='w-auto' src={cat.image} alt='' />
+            <img className='w-auto' src={cat.image} alt='' loading='lazy' />
             <div className='absolute inset-0 bg-black/20 flex items-end p-1 justify-center'>
               <Link
                 to={"/shop/" + cat.link}

@@ -29,7 +29,7 @@ const About = () => {
           </p>
         </div>
         <div className='bg-red-500 '>
-          <img className='h-96 w-full object-cover' src={men} alt='' />
+          <img className='h-96 w-full object-cover' src={men} alt='' loading='lazy' />
         </div>
       </section>
       <section className='grid grid-cols-1 md:grid-cols-3 w-4/5 mx-auto gap-4'>
@@ -45,7 +45,7 @@ const About = () => {
           </p>
         </div>
         <div className='bg-red-500 md:order-first '>
-          <img className='h-96 w-full object-cover' src={pendant} alt='' />
+          <img className='h-96 w-full object-cover' src={pendant} alt='' loading='lazy' />
         </div>
       </section>
       <section className='grid grid-cols-1 md:grid-cols-3 w-4/5 mx-auto gap-4'>
@@ -61,7 +61,7 @@ const About = () => {
           </p>
         </div>
         <div className='bg-red-500'>
-          <img className='h-96 w-full object-cover' src={laptop} alt='' />
+          <img className='h-96 w-full object-cover' src={laptop} alt='' loading='lazy' />
         </div>
       </section>
     </div>

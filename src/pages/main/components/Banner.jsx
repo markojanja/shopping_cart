@@ -15,7 +15,7 @@ const Banner = () => {
         </Link>
       </div>
       <div className='flex justify-center items-end overflow-hidden'>
-        <img className='h-full w-full object-cover' src={banner} alt='' />
+        <img className='h-full w-full object-cover' src={banner} alt='' loading='lazy' />
       </div>
     </main>
   );

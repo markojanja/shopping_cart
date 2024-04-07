@@ -5,7 +5,7 @@ const PromoSection = () => {
   return (
     <section className='grid grid-cols-1 lg:grid-cols-3 bg-red-500 rounded-lg w-4/5 mx-auto'>
       <div className='flex flex-col  gap-3  p-3 w-full'>
-        <img className='w-full h-full object-cover' src={promo} alt='' />
+        <img className='w-full h-full object-cover' src={promo} alt='' loading='lazy' />
       </div>
       <div className='text-white p-3 flex flex-col gap-3 items-start justify-between col-span-2'>
         <h2 className='font-bold text-2xl'>Get best deals</h2>
