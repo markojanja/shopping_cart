@@ -18,7 +18,14 @@ const Banner = () => {
         </Link>
       </div>
       <div className='flex justify-center items-end overflow-hidden'>
-        <LazyLoadImage className='h-full w-full object-cover' src={banner} effect='blur' placeholderSrc={placeholder} />
+        <LazyLoadImage
+          className='h-full w-full object-cover'
+          height={"100%"}
+          width={"100%"}
+          src={banner}
+          effect='blur'
+          placeholderSrc={placeholder}
+        />
       </div>
     </main>
   );

@@ -1,7 +1,10 @@
+import { useContext } from "react";
+import { CartContext } from "../../../context/CartContext";
 import { Link, useLoaderData } from "react-router-dom";
 import { IoCartSharp } from "react-icons/io5";
 
 const Products = () => {
+  const { addToCart } = useContext(CartContext);
   const data = useLoaderData();
   return (
     <>
@@ -17,12 +20,15 @@ const Products = () => {
             </div>
           </div>
           <div className='flex justify-center gap-2 p-2 bg-gray-50'>
+            <button
+              className='bg-black py-2 px-4 text-white font-bold text-center text-2xl'
+              onClick={() => addToCart(product)}
+            >
+              <IoCartSharp />
+            </button>
             <Link to={`/shop/products/${product.id}`} className='bg-black max-w-[100px] p-2 text-white font-bold'>
               Details
             </Link>
-            <button className='bg-black py-2 px-4 text-white font-bold text-center text-2xl'>
-              <IoCartSharp />
-            </button>
           </div>
         </div>
       ))}

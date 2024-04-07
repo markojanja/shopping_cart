@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { CartContext } from "../../../context/CartContext";
 
 const Product = () => {
+  const { addToCart } = useContext(CartContext);
   const product = useLoaderData();
   const navigate = useNavigate();
 
@@ -19,7 +22,12 @@ const Product = () => {
             </p>
           </div>
           <div className='flex items-center justify-start gap-4'>
-            <button className='bg-red-500 py-2 px-4 text-white font-bold text-center text-xl'>Buy</button>
+            <button
+              onClick={() => addToCart(product)}
+              className='bg-red-500 py-2 px-4 text-white font-bold text-center text-xl'
+            >
+              Buy
+            </button>
             <button
               onClick={() => navigate(-1)}
               className='bg-black py-2 px-4 text-white font-bold text-center text-xl'

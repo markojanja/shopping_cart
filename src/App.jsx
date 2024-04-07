@@ -9,6 +9,7 @@ import Product, { loader as productLoader } from "./pages/shop/components/Produc
 import ErrorPage from "./components/ErrorPage.jsx";
 import { loader as catLoader } from "./pages/shop/Shop.jsx";
 import { loader as productsLoader } from "./pages/shop/components/Products.jsx";
+import Cart from "./pages/cart/Cart.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -47,6 +48,10 @@ function App() {
           path: "/shop/products/:id",
           element: <Product />,
           loader: productLoader,
+        },
+        {
+          path: "/shop/cart",
+          element: <Cart />,
         },
         {
           path: "/contact",

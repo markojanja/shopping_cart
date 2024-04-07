@@ -2,32 +2,35 @@ import { createContext, useState } from "react";
 
 export const CartContext = createContext();
 
-// eslint-disable-next-line react/prop-types
 export const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addToCart = (product) => {
-    const isProductInCart = cart.some((item) => item.id === product.id);
+    const index = cart.findIndex((item) => item.id === product.id);
 
-    isProductInCart
-      ? setCart((prevCart) => prevCart.map((item) => (item.id === product.id ? { ...item, qty: item.qty + 1 } : item)))
-      : setCart((prevCart) => [...prevCart, { ...product, qty: 1 }]);
+    if (index !== -1) {
+      setCart((prevCart) => {
+        const newCart = [...prevCart];
+        newCart[index] = { ...newCart[index], qty: newCart[index].qty + 1 };
+        return newCart;
+      });
+    } else {
+      setCart((prevCart) => [...prevCart, { ...product, qty: 1 }]);
+    }
   };
 
   const decrementOrRemoveCartItem = (product) => {
-    const isProductInCart = cart.some((item) => item.id === product.id);
+    const index = cart.findIndex((item) => item.id === product.id);
 
-    isProductInCart
-      ? setCart((prevCart) =>
-          prevCart.map((item) =>
-            item.qty <= 1
-              ? setCart(cart.filter((item) => product.id !== item.id))
-              : item.id === product.id
-                ? { ...item, qty: item.qty - 1 }
-                : item,
-          ),
-        )
-      : setCart((prevCart) => [...prevCart, { ...product, qty: 1 }]);
+    if (index !== -1) {
+      setCart((prevCart) => {
+        const newCart = [...prevCart];
+        newCart[index] = { ...newCart[index], qty: newCart[index].qty - 1 };
+        return newCart[index].qty < 1 ? newCart.filter((item) => product.id !== item.id) : newCart;
+      });
+    } else {
+      setCart((prevCart) => [...prevCart, { ...product, qty: 1 }]);
+    }
   };
 
   const removeFromCart = (product) => {
@@ -35,12 +38,12 @@ export const CartContextProvider = ({ children }) => {
     setCart(updatedCart);
   };
 
-  const values = {
+  const vals = {
     cart,
     setCart,
     addToCart,
     decrementOrRemoveCartItem,
     removeFromCart,
   };
-  return <CartContext.Provider value={values}>{children}</CartContext.Provider>;
+  return <CartContext.Provider value={vals}>{children}</CartContext.Provider>;
 };

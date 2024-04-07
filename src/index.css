@@ -51,3 +51,8 @@ body {
 .capitalize-first::first-letter {
   text-transform: uppercase !important;
 }
+
+.slide {
+  transform: translateX(-450px);
+  transition: all 0.2s ease;
+}

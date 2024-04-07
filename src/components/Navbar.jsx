@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useContext, useMemo } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
 import MobileNavbar from "./MobileNavbar";
 import { IoBagHandleOutline, IoSunnySharp, IoMoonSharp, IoMenuSharp } from "react-icons/io5";
 import { GiTomato } from "react-icons/gi";
@@ -7,6 +8,9 @@ import { GiTomato } from "react-icons/gi";
 const Navbar = () => {
   const [theme, setTheme] = useState(true);
   const [mobileNav, setMobileNav] = useState(false);
+
+  const { cart } = useContext(CartContext);
+  const totalItems = cart.reduce((acc, curr) => acc + curr.qty, 0);
 
   const togggleMobileView = () => {
     setMobileNav(!mobileNav);
@@ -41,10 +45,16 @@ const Navbar = () => {
           </ul>
           <ul className='flex gap-4 items-center text-2xl'>
             <li className='relative cursor-pointer'>
-              <IoBagHandleOutline />
-              <div className='absolute flex items-center justify-center top-4 left-4 rounded-full bg-red-500 min-w-4 min-h-4 p-0.3'>
-                <span className='text-xs text-white'>99</span>
-              </div>
+              <Link to='shop/cart'>
+                <IoBagHandleOutline />
+                {cart.length ? (
+                  <div className='absolute flex items-center justify-center top-4 left-4 rounded-full bg-red-500 min-w-4 min-h-4 p-0.3'>
+                    <span className='text-xs text-white'>{totalItems}</span>
+                  </div>
+                ) : (
+                  ""
+                )}
+              </Link>
             </li>
             {theme ? (
               <li className='cursor-pointer'>
