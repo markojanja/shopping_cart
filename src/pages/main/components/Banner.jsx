@@ -10,7 +10,7 @@ const Banner = () => {
           Routine
         </h1>
         <p className='text-xl font-semibold text-gray-900'>Unravel Endless Choices on Our E-Commerce Platform!</p>
-        <Link className='bg-red-500 text-white px-4 py-2' to='/shop'>
+        <Link className='bg-red-500 text-white px-4 py-2 text-center font-bold' to='/shop'>
           Shop Now
         </Link>
       </div>

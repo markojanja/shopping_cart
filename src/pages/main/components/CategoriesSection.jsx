@@ -2,24 +2,29 @@ import man from "../../../assets/man2.png";
 import women from "../../../assets/women2.png";
 import laptop from "../../../assets/laptop2.png";
 import pendant from "../../../assets/pendant2.png";
+import { Link } from "react-router-dom";
 
 const CategoriesSection = () => {
   const categories = [
     {
       name: "Women",
       image: women,
+      link: "women's clothing",
     },
     {
       name: "Men",
       image: man,
+      link: "men's clothing",
     },
     {
       name: "Jewelery",
       image: pendant,
+      link: "jewelery",
     },
     {
       name: "Electronics",
       image: laptop,
+      link: "electronics",
     },
   ];
   return (
@@ -33,9 +38,12 @@ const CategoriesSection = () => {
           <div key={idx} className='relative bg-red-500'>
             <img className='w-auto' src={cat.image} alt='' />
             <div className='absolute inset-0 bg-black/20 flex items-end p-1 justify-center'>
-              <button className='outline-none border-none bg-white text-black py-3 px-6 w-[150px] font-semibold'>
+              <Link
+                to={"/shop/" + cat.link}
+                className='outline-none border-none bg-white text-black py-3 px-6 w-[150px] font-semibold text-center'
+              >
                 {cat.name}
-              </button>
+              </Link>
             </div>
           </div>
         ))}

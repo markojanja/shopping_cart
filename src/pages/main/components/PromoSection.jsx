@@ -16,8 +16,8 @@ const PromoSection = () => {
           shop with confidence. Don't miss out on these incredible savings , shop now and elevate your shopping
           experience with us!
         </p>
-        <Link className='bg-white max-w-[200px] text-black px-6 py-3' to='/shop'>
-          ShopNow
+        <Link className='bg-white max-w-[200px] text-black px-6 py-3 font-bold' to='/shop'>
+          Shop Now
         </Link>
       </div>
     </section>

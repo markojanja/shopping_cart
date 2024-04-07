@@ -14,7 +14,7 @@ const AboutSection = () => {
           gadgets, fashion-forward accessories, or unique home decor, we're here to help you discover the perfect
           solution. Thank you for choosing us as your trusted online shopping destination.
         </p>
-        <Link className='bg-red-500 px-4 py-2 text-white font-bold w-[150px]' to='/about'>
+        <Link className='bg-red-500 px-6 py-3 text-white font-bold w-[150px] text-center' to='/about'>
           Learn more
         </Link>
       </div>

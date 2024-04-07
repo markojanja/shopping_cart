@@ -7,7 +7,9 @@ const Shop = () => {
   return (
     <main className='min-h-screen text-black flex flex-col sm:flex-row items-center justify-center'>
       <Sidebar data={data} />
-      <section className='pt-24 px-5 grid w-5/6 sm:grid-cols-2 lg:grid-cols-4 gap-5 p-5 self-stretch md:w-5/6 lg:w-4/6 mx-auto'>
+      <section
+        className={`relative pt-24 px-5 grid w-5/6 sm:grid-cols-2 lg:grid-cols-4 gap-5 p-5 self-stretch md:w-5/6 lg:w-4/6 mx-auto`}
+      >
         <Outlet />
       </section>
     </main>

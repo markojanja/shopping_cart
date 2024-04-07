@@ -25,5 +25,21 @@ body {
   --txt: 248 250 252;
 }
 
+.loading {
+  position: absolute;
+  background: #ffff;
+  inset: 0;
+}
 
+.loading-icon {
+  animation: animate 2s infinite;
+}
 
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}
