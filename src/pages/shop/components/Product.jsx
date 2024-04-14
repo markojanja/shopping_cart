@@ -16,7 +16,9 @@ const Product = () => {
         <div className='p-4 flex flex-col gap-4'>
           <div className='flex flex-col flex-1 gap-7'>
             <h2 className='text-2xl font-bold text-left'>{product.title}</h2>
-            <p className='flex-1 text-gray-700 text-sm md:text-xl text-left'>{product.description}</p>
+            <p className='flex-1 text-gray-700 text-sm md:text-xl text-left first-letter:uppercase'>
+              {product.description}
+            </p>
             <p className='font-extrabold text-3xl'>
               <span className='!text-xl text-gray-700'>Price:</span> ${product.price}
             </p>
@@ -26,12 +28,9 @@ const Product = () => {
               onClick={() => addToCart(product)}
               className='bg-red-500 py-2 px-4 text-white font-bold text-center text-xl'
             >
-              Buy
+              Add to cart
             </button>
-            <button
-              onClick={() => navigate(-1)}
-              className='bg-black py-2 px-4 text-white font-bold text-center text-xl'
-            >
+            <button onClick={() => navigate(-1)} className='text-red-500 text-md cursor-pointer' role='link'>
               Go back
             </button>
           </div>

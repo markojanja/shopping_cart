@@ -26,7 +26,7 @@ const Cart = () => {
           <div className='flex-1 flex flex-col items-center justify-start gap-4 py-3'>
             <div className='flex flex-col gap-2 bg-gray-200 p-4 w-5/6 mx-auto items-center justify-start'>
               <h2 className='text-2xl font-bold'>Order summary</h2>
-              <p>Items: {totalItems}</p>
+              <p>{totalItems === 1 ? `${totalItems} item in cart` : `${totalItems} items in cart`}</p>
               <h3 className='text-xl font-bold'>Total: ${total.toFixed(2)}</h3>
             </div>
             <button className='bg-red-500 text-white font-semibold px-6 py-3 w-5/6 mx-auto'>Checkout</button>
