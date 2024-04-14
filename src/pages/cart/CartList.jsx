@@ -4,7 +4,7 @@ const CartList = ({ cart, addToCart, decrementOrRemoveCartItem, removeFromCart }
   const subtotal = (x, y) => (y * x).toFixed(2);
 
   return (
-    <div className='flex flex-col gap-3 flex-1 items-center'>
+    <div className='flex flex-col gap-3 flex-1 items-center py-4'>
       <h2 className='text-2xl font-bold'>Items in cart</h2>
       {cart.map((item) => (
         <div className='flex w-[90%] lg:w-[60%] mx-auto gap-2 border border-gray-200' key={item.id}>
@@ -24,7 +24,7 @@ const CartList = ({ cart, addToCart, decrementOrRemoveCartItem, removeFromCart }
               <button onClick={() => decrementOrRemoveCartItem(item)}>
                 <FaMinus />
               </button>
-              <button className='ml-auto mr-1' onClick={() => removeFromCart(item)}>
+              <button className='ml-auto mr-1 text-gray-400' onClick={() => removeFromCart(item)}>
                 <FaTrash />
               </button>
             </div>

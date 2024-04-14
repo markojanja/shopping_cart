@@ -1,20 +1,31 @@
 import { IoLogoGithub, IoMailSharp, IoLogoFacebook, IoLogoInstagram } from "react-icons/io5";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className='grid grid-cols-1 sm:grid-cols-3 items-center content-center gap-3 bg-black text-white py-3'>
       <ul className='flex flex-col items-center justify-start h-full'>
         <h3 className='text-gray-400 font-bold uppercase'>Links</h3>
-        <li>Home</li>
-        <li>Shop</li>
-        <li>About</li>
-        <li>Contact</li>
+        <li>
+          <Link to='/'>Home</Link>
+        </li>
+        <li>
+          <Link to={"/shop"}>Shop</Link>
+        </li>
+        <li>
+          <Link to={"/about"}>About</Link>
+        </li>
+        <li>
+          <Link to={"/contact"}>Contact</Link>
+        </li>
       </ul>
 
       <ul className='flex flex-col items-center justify-start h-full'>
         <h3 className='text-gray-400 font-bold uppercase'>Information</h3>
-        <li>Cart</li>
+        <li>
+          <Link to={"/shop/cart"}>Cart</Link>
+        </li>
         <li>Account</li>
         <li>FAQ's</li>
         <li>Blog</li>
@@ -37,7 +48,7 @@ const Footer = () => {
       <div className='w-full py-4 px-8 flex items-center justify-center sm:col-span-3'>
         <h3 className='text-lg'>
           Developed by:{" "}
-          <a href='text-center'>
+          <a className='text-center'>
             MarkoJanja <IoLogoGithub className='inline text-2xl' />
           </a>
         </h3>

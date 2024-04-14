@@ -40,7 +40,7 @@ const CategoriesSection = () => {
             <div className='absolute inset-0 bg-black/20 flex items-end p-1 justify-center'>
               <Link
                 to={"/shop/" + cat.link}
-                className='outline-none border-none bg-white text-black py-3 px-6 w-[150px] font-semibold text-center'
+                className='outline-none border-none bg-white text-black p-2 sm:p-4 w-[100px] text-sm sm:w-[150px] font-semibold text-center'
               >
                 {cat.name}
               </Link>

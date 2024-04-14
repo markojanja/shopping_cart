@@ -11,7 +11,7 @@ const Product = () => {
     <main className='flex items-center min-h-screen pt-24'>
       <div className='w-4/5 mx-auto grid md:grid-cols-2 items-center justify-center'>
         <div className='flex-1 flex items-center justify-center'>
-          <img src={product.image} className='w-[70%]' />
+          <img src={product.image} className='w-[70%] p-4' />
         </div>
         <div className='p-4 flex flex-col gap-4'>
           <div className='flex flex-col flex-1 gap-7'>

@@ -11,9 +11,9 @@ const Contact = () => {
             <p className='text-gray-600'>Get in touch and let us know how we can help</p>
           </div>
           <form action='' className='flex flex-col gap-3 w-5/6 mx-auto'>
-            <input className='border-2 border-gray-500 rounded-r-sm p-2' type='email' />
-            <textarea className='border-2 border-gray-500 rounded-sm p-2' name='' id='' cols='30' rows='10'></textarea>
-            <button className=' w-[150px] bg-red-500 py-3 px-3 text-white'>Send message</button>
+            <input className='border border-gray-500 rounded-r-sm p-2' type='email' />
+            <textarea className='border border-gray-500 rounded-sm p-2' name='' id='' cols='30' rows='10'></textarea>
+            <button className=' w-[150px] bg-red-500 py-3 px-3 text-white font-semibold'>Send message</button>
           </form>
           <div className='flex flex-row w-5/6 items-start justify-start gap-3 p-3'>
             <IoLogoFacebook className='text-2xl text-red-500' />

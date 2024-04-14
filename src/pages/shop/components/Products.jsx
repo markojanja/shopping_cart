@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 import { Link, useLoaderData } from "react-router-dom";
-import { IoCartSharp } from "react-icons/io5";
 
 const Products = () => {
   const { addToCart } = useContext(CartContext);
@@ -14,21 +13,25 @@ const Products = () => {
           className='flex max-h-96 justify-between flex-col border border-gray-100 gap-3 rounded-md shadow-md'
         >
           <div className='h-64 items-center justify-center relative text-white font-bold p-3  bg-white'>
-            <img className='h-full w-full object-contain flex-1' src={product.image} alt='' />
+            <Link to={`/shop/products/${product.id}`}>
+              <img className='h-full w-full object-contain flex-1' src={product.image} alt='' />
+            </Link>
+
             <div className='absolute bottom-1 right-2 flex items-center justify-center py-1 px-3 max-w-[85px]  bg-red-500 rounded-3xl'>
               ${product.price}
             </div>
           </div>
+          <Link to={`/shop/products/${product.id}`}>
+            <p className='ml-2 text-gray-500'>{product.title.slice(0, 20) + "..."}</p>
+          </Link>
+
           <div className='flex justify-center gap-2 p-2 bg-gray-50'>
             <button
-              className='bg-black py-2 px-4 text-white font-bold text-center text-2xl'
+              className='border border-red-500 py-2 px-4 text-red-500 font-bold text-center rounded-sm hover:bg-red-500 hover:text-white transition-all duration-200 ease-in'
               onClick={() => addToCart(product)}
             >
-              <IoCartSharp />
+              Add to cart
             </button>
-            <Link to={`/shop/products/${product.id}`} className='bg-black max-w-[100px] p-2 text-white font-bold'>
-              Details
-            </Link>
           </div>
         </div>
       ))}

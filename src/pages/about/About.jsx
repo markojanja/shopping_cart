@@ -5,7 +5,7 @@ import laptop from "../../assets/laptop.png";
 const About = () => {
   return (
     <div className='min-h-screen text-black flex flex-col justify-center gap-16 py-24 bg-slate-50'>
-      <main className='flex flex-col justify-center w-5/6 mx-auto gap-8 bg-gray-200 rounded-lg p-4 md:p-10 min-h-96'>
+      <main className='flex flex-col justify-center w-5/6 mx-auto gap-8 bg-gray-100 rounded-lg p-4 md:p-10 min-h-96'>
         <h1 className='text-2xl md:text-3xl lg:5xl font-bold'>
           <span className='text-red-500'>Your Ultimate</span> Shopping Destination
         </h1>

@@ -1,6 +1,7 @@
 import { useContext, useMemo } from "react";
 import { CartContext } from "../../context/CartContext";
 import CartList from "./CartList";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { cart, addToCart, decrementOrRemoveCartItem, removeFromCart } = useContext(CartContext);
@@ -22,17 +23,23 @@ const Cart = () => {
             removeFromCart={removeFromCart}
             total={total}
           />
-          <div className='flex-1 flex flex-col items-center justify-start'>
-            <div className='flex flex-col gap-2 bg-gray-400 p-4 w-5/6 mx-auto items-center justify-start rounded-lg '>
+          <div className='flex-1 flex flex-col items-center justify-start gap-4 py-3'>
+            <div className='flex flex-col gap-2 bg-gray-200 p-4 w-5/6 mx-auto items-center justify-start'>
               <h2 className='text-2xl font-bold'>Order summary</h2>
               <p>Items: {totalItems}</p>
               <h3 className='text-xl font-bold'>Total: ${total.toFixed(2)}</h3>
             </div>
+            <button className='bg-red-500 text-white font-semibold px-6 py-3 w-5/6 mx-auto'>Checkout</button>
           </div>
         </>
       ) : (
-        <div className='min-h-screen pt-24 flex items-center justify-center w-full'>
-          <h1 className='text-5xl font-bold'>No items in cart yet</h1>
+        <div className='min-h-screen pt-24 flex items-start justify-center w-full'>
+          <div className='flex flex-col gap-2 items-center justify-center'>
+            <h1 className='text-xl font-bold'>Your cart is currently empty</h1>
+            <Link to={"/shop"} className='text-red-500 font-bold'>
+              Go back to shoping
+            </Link>
+          </div>
         </div>
       )}
     </main>

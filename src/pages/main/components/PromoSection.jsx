@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const PromoSection = () => {
   return (
-    <section className='grid grid-cols-1 lg:grid-cols-3 bg-red-500 rounded-lg w-4/5 mx-auto'>
+    <section className='grid grid-cols-1 lg:grid-cols-3 bg-red-500 w-full sm:w-4/5 mx-auto'>
       <div className='flex flex-col  gap-3  p-3 w-full'>
         <img className='w-full h-full object-cover' src={promo} alt='' loading='lazy' />
       </div>

@@ -2,11 +2,10 @@ import { useState, useContext, useMemo } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import MobileNavbar from "./MobileNavbar";
-import { IoBagHandleOutline, IoSunnySharp, IoMoonSharp, IoMenuSharp } from "react-icons/io5";
+import { IoBagHandleOutline, IoMenuSharp } from "react-icons/io5";
 import { GiTomato } from "react-icons/gi";
 
 const Navbar = () => {
-  const [theme, setTheme] = useState(true);
   const [mobileNav, setMobileNav] = useState(false);
 
   const { cart } = useContext(CartContext);
@@ -56,15 +55,6 @@ const Navbar = () => {
                 )}
               </Link>
             </li>
-            {theme ? (
-              <li className='cursor-pointer'>
-                <IoSunnySharp />
-              </li>
-            ) : (
-              <li className='cursor-pointer'>
-                <IoMoonSharp />
-              </li>
-            )}
             <li className='sm:hidden cursor-pointer' onClick={togggleMobileView}>
               <IoMenuSharp />
             </li>
