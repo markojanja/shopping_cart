@@ -4,7 +4,7 @@ import CartList from "./CartList";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { cart, addToCart, decrementOrRemoveCartItem, removeFromCart } = useContext(CartContext);
+  const { cart } = useContext(CartContext);
 
   const total = useMemo(() => {
     return cart.reduce((acc, curr) => acc + curr.price * curr.qty, 0);
@@ -16,13 +16,7 @@ const Cart = () => {
     <main className='min-h-screen pt-24 flex flex-col md:flex-row'>
       {cart.length ? (
         <>
-          <CartList
-            cart={cart}
-            addToCart={addToCart}
-            decrementOrRemoveCartItem={decrementOrRemoveCartItem}
-            removeFromCart={removeFromCart}
-            total={total}
-          />
+          <CartList cart={cart} />
           <div className='flex-1 flex flex-col items-center justify-start gap-4 py-3'>
             <div className='flex flex-col gap-2 bg-gray-200 p-4 w-5/6 mx-auto items-center justify-start'>
               <h2 className='text-2xl font-bold'>Order summary</h2>
