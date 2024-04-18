@@ -12,18 +12,18 @@ export const testimonials = [
     feedback:
       "Fantastic service! The items I ordered exceeded my expectations. Will definitely be shopping here again.",
   },
-  {
-    name: "Emily Wilson",
-    feedback: "Amazing products and quick delivery! I'm impressed with the quality and variety available here.",
-  },
-  {
-    name: "Michael Brown",
-    feedback:
-      "Excellent experience overall! The support team was very helpful, and I'm extremely satisfied with my purchase.",
-  },
-  {
-    name: "Sarah Jones",
-    feedback:
-      "This e-shop is wonderful! The products are exactly as described, and the prices are unbeatable. 5 stars!",
-  },
+  // {
+  //   name: "Emily Wilson",
+  //   feedback: "Amazing products and quick delivery! I'm impressed with the quality and variety available here.",
+  // },
+  // {
+  //   name: "Michael Brown",
+  //   feedback:
+  //     "Excellent experience overall! The support team was very helpful, and I'm extremely satisfied with my purchase.",
+  // },
+  // {
+  //   name: "Sarah Jones",
+  //   feedback:
+  //     "This e-shop is wonderful! The products are exactly as described, and the prices are unbeatable. 5 stars!",
+  // },
 ];

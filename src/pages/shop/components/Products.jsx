@@ -27,7 +27,7 @@ const Products = () => {
 
           <div className='flex justify-center gap-2 p-2 bg-gray-50'>
             <button
-              className='border border-red-500 py-2 px-4 text-red-500 font-bold text-center rounded-sm hover:bg-red-500 hover:text-white transition-all duration-200 ease-in'
+              className='border border-red-500 py-2 px-4 text-red-500 font-bold text-center rounded-sm lg:hover:bg-red-500 lg:hover:text-white transition-all duration-200 ease-in'
               onClick={() => addToCart(product)}
             >
               Add to cart
