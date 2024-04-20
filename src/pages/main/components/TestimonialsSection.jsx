@@ -1,4 +1,3 @@
-import { testimonials } from "../../../../users/users";
 import Slider from "./Slider";
 
 const TestimonialsSection = () => {

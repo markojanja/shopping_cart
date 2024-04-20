@@ -9,22 +9,22 @@ const MobileNavbar = ({ onClick }) => {
         <button className='absolute right-2 top-4 outline-none border-none cursor-pointer' onClick={onClick}>
           <IoCloseSharp className='text-xl' />
         </button>
-        <li className='cursor-pointer'>
+        <li className='cursor-pointer font-semibold'>
           <NavLink to='/' onClick={onClick}>
             Home
           </NavLink>
         </li>
-        <li className='cursor-pointer'>
+        <li className='cursor-pointer font-semibold'>
           <NavLink to='/shop' onClick={onClick}>
             Shop
           </NavLink>
         </li>
-        <li className='cursor-pointer'>
+        <li className='cursor-pointer font-semibold'>
           <NavLink to='/about' onClick={onClick}>
             About
           </NavLink>
         </li>
-        <li className='cursor-pointer'>
+        <li className='cursor-pointer font-semibold'>
           <NavLink to='/contact' onClick={onClick}>
             Contact
           </NavLink>

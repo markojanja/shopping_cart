@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Navigation, Pagination } from "swiper/modules";
+import Slide from "./Slide";
 
 const Slider = () => {
   return (
@@ -38,12 +39,7 @@ const Slider = () => {
     >
       {users.map((user, i) => (
         <SwiperSlide key={i}>
-          <div className='flex flex-col  gap-3 p-7 bg-gray-200 rounded-lg shadow-lg min-h-[350px]' key={i}>
-            <h3 className='text-gray-800 font-bold text-lg'>{user.name}</h3>
-            <blockquote>
-              <q className='text-gray-600 text-2xl font-bold'>{user.feedback}</q>
-            </blockquote>
-          </div>
+          <Slide user={user} />
         </SwiperSlide>
       ))}
     </Swiper>

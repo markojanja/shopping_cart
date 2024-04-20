@@ -9,9 +9,7 @@ const CartCard = ({ item }) => {
     <div className='flex w-[90%] lg:w-[60%] mx-auto gap-2 border border-gray-200 p-2'>
       <img className='p-1 w-[100px] h-auto' src={item.image} />
       <div className='flex flex-col gap-2 flex-1'>
-        <p>
-          {item.title} ${item.price}
-        </p>
+        <p>{item.title}</p>
         <p>
           <span className='font-bold'>subtotal:</span> {subtotal(item.price, item.qty)}$
         </p>
