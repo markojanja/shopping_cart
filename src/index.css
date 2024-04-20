@@ -52,7 +52,17 @@ body {
   text-transform: uppercase !important;
 }
 
-.slide {
-  transform: translateX(-450px);
-  transition: all 0.2s ease;
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after,
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  color: #ef4444;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ef4444;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  top: 70%;
 }
