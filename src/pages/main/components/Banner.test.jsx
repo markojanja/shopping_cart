@@ -3,7 +3,7 @@ import React from "react";
 import "@testing-library/jest-dom";
 import Banner from "./Banner";
 import { BrowserRouter } from "react-router-dom";
-import { expect } from "vitest";
+import { expect, test } from "vitest";
 
 test("renders correct heading", async () => {
   render(<Banner />, { wrapper: BrowserRouter });
@@ -21,4 +21,10 @@ test("renders correct image", async () => {
   render(<Banner />, { wrapper: BrowserRouter });
 
   expect(screen.getByRole("img")).toBeInTheDocument();
+});
+
+test("renders button link", async () => {
+  render(<Banner />, { wrapper: BrowserRouter });
+
+  expect(screen.getByRole("link", { name: /shop now/i })).toBeInTheDocument();
 });

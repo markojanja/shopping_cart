@@ -88,7 +88,6 @@ test("renders product 5 cards", async () => {
 
   const router = createMemoryRouter(routes, {
     initialEntries: ["/", "/shop"],
-    initialIndex: 1,
   });
 
   render(

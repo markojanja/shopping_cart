@@ -4,6 +4,7 @@ import "@testing-library/jest-dom";
 import { BrowserRouter } from "react-router-dom";
 import CategoriesSection from "./CategoriesSection";
 import { expect, test } from "vitest";
+import intersectionObserverMock from "../../../__mocks__/intersectionObserverMock";
 
 test("renders correct heading", async () => {
   render(<CategoriesSection />, { wrapper: BrowserRouter });
