@@ -5,12 +5,14 @@ import { Link, useLoaderData } from "react-router-dom";
 const Products = () => {
   const { addToCart } = useContext(CartContext);
   const data = useLoaderData();
+
   return (
     <>
       {data.map((product) => (
         <div
           key={product.id}
           className='flex max-h-96 justify-between flex-col border border-gray-100 gap-3 rounded-md shadow-md'
+          data-testid='card'
         >
           <div className='h-64 items-center justify-center relative text-white font-bold p-3  bg-white'>
             <Link to={`/shop/products/${product.id}`}>
