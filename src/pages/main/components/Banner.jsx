@@ -1,7 +1,5 @@
 import banner from "../../../assets/banner44.png";
-import placeholder from "../../../assets/place.png";
 import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { motion } from "framer-motion";
 
