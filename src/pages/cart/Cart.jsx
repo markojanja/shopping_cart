@@ -18,7 +18,7 @@ const Cart = () => {
         <>
           <CartList cart={cart} />
           <div className='flex-1 flex flex-col items-center justify-start gap-4 py-3'>
-            <div className='flex flex-col gap-2 bg-gray-200 p-4 w-5/6 mx-auto items-center justify-start'>
+            <div className='flex flex-col gap-2 bg-gray-200 p-4 w-5/6 mx-auto items-center justify-start pt-0'>
               <h2 className='text-2xl font-bold'>Order summary</h2>
               <p>{totalItems === 1 ? `${totalItems} item in cart` : `${totalItems} items in cart`}</p>
               <h3 className='text-xl font-bold'>Total: ${total.toFixed(2)}</h3>

@@ -66,3 +66,9 @@ body {
 .swiper-button-prev {
   top: 70%;
 }
+
+@media (max-width: 450px) {
+  .loading {
+    z-index: 9999;
+  }
+}
