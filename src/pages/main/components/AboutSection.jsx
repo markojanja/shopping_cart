@@ -17,7 +17,7 @@ const AboutSection = () => {
     >
       <div className='flex flex-col gap-7 justify-center items-start self-start flex-2'>
         <h2 className='text-3xl font-bold'>AboutUs</h2>
-        <p className='text-md lg:leading-loose'>
+        <p className='text-md lg:leading-loose' role='paragraph'>
           We're a passionate team dedicated to bringing you a curated selection of high-quality products that enhance
           your life. With a focus on innovation, style, and functionality, we strive to offer items that meet your needs
           and exceed your expectations. Our mission is to provide an exceptional shopping experience, from browsing our
