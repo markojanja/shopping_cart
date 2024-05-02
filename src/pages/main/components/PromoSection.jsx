@@ -3,6 +3,22 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const PromoSection = () => {
+  const container = {
+    hidden: {
+      x: "100%",
+      opacity: 0,
+    },
+
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.7,
+        delay: 0.6,
+      },
+    },
+  };
+
   const text = {
     hidden: {
       x: 50,
@@ -12,14 +28,20 @@ const PromoSection = () => {
       x: 0,
       opacity: 1,
       transition: {
-        duration: 0.7,
-        delay: 1,
+        duration: 0.6,
+        delay: 0.6,
       },
     },
   };
 
   return (
-    <section className='grid grid-cols-1 lg:grid-cols-3 bg-red-500 w-full sm:w-4/5 mx-auto shadow-lg overflow-hidden'>
+    <motion.section
+      variants={container}
+      viewport={{ once: true }}
+      initial='hidden'
+      whileInView='visible'
+      className='grid grid-cols-1 lg:grid-cols-3 bg-red-500 w-full sm:w-4/5 mx-auto shadow-lg overflow-hidden'
+    >
       <div className='flex flex-col  gap-3  p-3 w-full'>
         <img className='w-full h-full object-cover' src={promo} alt='girl shopping' loading='lazy' />
       </div>
@@ -42,7 +64,7 @@ const PromoSection = () => {
           Shop Now
         </Link>
       </motion.div>
-    </section>
+    </motion.section>
   );
 };
 
