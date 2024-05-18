@@ -1,46 +1,25 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useReducer } from "react";
+import { cartReducer, initialState } from "../utils/cartReducer";
 
 export const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const [cart, dispatch] = useReducer(cartReducer, initialState);
 
   const addToCart = (product) => {
-    const index = cart.findIndex((item) => item.id === product.id);
-
-    if (index !== -1) {
-      setCart((prevCart) => {
-        const newCart = [...prevCart];
-        newCart[index] = { ...newCart[index], qty: newCart[index].qty + 1 };
-        return newCart;
-      });
-    } else {
-      setCart((prevCart) => [...prevCart, { ...product, qty: 1 }]);
-    }
+    dispatch({ type: "ADD_TO_CART", product });
   };
 
   const decrementOrRemoveCartItem = (product) => {
-    const index = cart.findIndex((item) => item.id === product.id);
-
-    if (index !== -1) {
-      setCart((prevCart) => {
-        const newCart = [...prevCart];
-        newCart[index] = { ...newCart[index], qty: newCart[index].qty - 1 };
-        return newCart[index].qty < 1 ? newCart.filter((item) => product.id !== item.id) : newCart;
-      });
-    } else {
-      setCart((prevCart) => [...prevCart, { ...product, qty: 1 }]);
-    }
+    dispatch({ type: "DECREMENT_OR_REMOVE_ITEM", product });
   };
 
   const removeFromCart = (product) => {
-    const updatedCart = cart.filter((item) => item.id !== product.id);
-    setCart(updatedCart);
+    dispatch({ type: "REMOVE_FROM_CART", product });
   };
 
   const vals = {
     cart,
-    setCart,
     addToCart,
     decrementOrRemoveCartItem,
     removeFromCart,
